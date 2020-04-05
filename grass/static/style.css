@@ -136,3 +136,8 @@ textarea.form-control:focus, input.form-control:focus {
 .btn {
   margin-top: 4px;
 }
+
+.select2-results {
+  background-color: #fff; 
+  color: grey;
+}
