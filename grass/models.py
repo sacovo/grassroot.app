@@ -14,6 +14,9 @@ from feincms3_meta.models import MetaMixin
 class Category(models.Model):
     name = models.CharField(max_length=180)
 
+    def __str__(self):
+        return self.name
+
 
 class Location(models.Model):
     zip_code = models.SmallIntegerField()
