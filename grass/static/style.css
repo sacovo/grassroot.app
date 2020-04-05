@@ -75,13 +75,13 @@ body {
 }
 
 .page-header {
-  margin-top: 20vh;
+  margin-top: calc(4em + 4vh);
   vertical-align: middle;
   font-weight: bold;
 }
 
 .page-header h1 {
-  font-size: calc(100% + 4vw);
+  font-size: calc(24px + 3vw);
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -124,6 +124,10 @@ input.form-control:focus {
 }
 
 .title {
-  margin-top: 8em;
-  margin-bottom: 3em;
+  margin-top: calc(4em + 10vh);
+  margin-bottom: calc(0.4em + 2vh);
+}
+
+.btn {
+  margin-top: 4px;
 }
