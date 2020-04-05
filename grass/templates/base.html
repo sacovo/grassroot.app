@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{{title}}{% endblock %}</title>
+    <title>Grass-Tools {% block title %}{% if title %}- {{title}}{% endif %}{% endblock %}</title>
 
     {% block style %}
     <script src="https://kit.fontawesome.com/ef2aa6b0b8.js" crossorigin="anonymous"></script>

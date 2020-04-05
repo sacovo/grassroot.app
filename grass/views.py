@@ -70,7 +70,9 @@ class SignupWizzard(SessionWizardView):
 
 
 def login_or_signup(request):
-    return render(request, 'grass/login_or_signup.html', {})
+    return render(request, 'grass/login_or_signup.html', {
+        'title': "Complete registration",
+    })
 
 
 @login_required
@@ -104,14 +106,16 @@ def dashboard(request, pk):
     request.session['group_pk'] = grassroot.pk
 
     return render(request, 'grass/dashboard.html', {
-        'grassroot': grassroot
+        'grassroot': grassroot,
+        'title': "Dashboard: " + grassroot.name,
     })
 
 
 def map_view(request):
 
     return render(request, 'grass/map.html', {
-        'grassroot_list': Grassroot.objects.all()
+        'grassroot_list': Grassroot.objects.all(),
+        'title': "Grassroots"
     })
 
 

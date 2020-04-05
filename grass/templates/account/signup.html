@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load bootstrap4 i18n %}
 
+{% block title %}- Sign Up {% endblock %}
+
 
 {% block content %}
 
@@ -10,7 +12,7 @@
 
 <div class="row justify-content-md-center">
   <div class="col-md-6">
-    <form class="login" method="POST" action="{% url 'account_login' %}">
+    <form class="sign-up" method="POST" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% if redirect_field_value %}
