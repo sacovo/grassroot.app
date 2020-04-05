@@ -1,0 +1,45 @@
+{% extends 'grass/base.html' %}
+
+{% block style %}
+{{block.super}}
+
+<style>
+#header {
+  margin-top: 8em;
+}
+#landingpage {
+  min-height: 110vh;
+  background: white;
+  color: black;
+  padding-top: 2em;
+}
+#header h1 {
+  color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #76BB84; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container" id="header">
+      <h1>{{grassroot.name}}</h1>
+</div>
+<div id="landingpage">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Kurzbeschreibung</h2>
+        {{grassroot.description}}  
+        <h2>Mission</h2>
+        {{grassroot.mission}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

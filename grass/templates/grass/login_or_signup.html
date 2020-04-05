@@ -1,0 +1,36 @@
+{% extends 'grass/base.html' %}
+
+{% block content %}
+<div class="row justify-content-md-center">
+  <div class="col-auto mt-5 page-header">
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 justify-content-md-center text-center">
+      <div class="page-header">
+
+        <p>
+        Um weiter zu machen, brauchst du einen Account
+        </p>
+        <div class="row justify-content-md-center my-4">
+          <div class="col-md-6">
+        <a class="btn btn-block btn-primary" href="{% url 'account_login' %}?next={% url 'link-account' %}">Login</a>
+          </div>
+        </div>
+
+        <p>
+        Noch keinen Account? Dann kannst du dich hier registrieren
+        </p>
+        <div class="row justify-content-md-center my-4">
+          <div class="col-md-6">
+        <a class="btn btn-block btn-primary" href="{% url 'account_signup' %}?next={% url 'link-account' %}">Sign Up</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

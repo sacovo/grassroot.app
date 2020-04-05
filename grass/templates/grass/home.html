@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col justify-content-md-center text-center">
+      <div class="page-header">
+        <h1>Zusammen arbeiten, zusammen grosses erreichen</h1>
+
+        <p class="text-left">
+        <b>Grassroot</b>, das (aus dem Englischen für Grasswurzel) auch Grassroot movement oder Basisbewegung, ist eine politische oder gesellschaftliche Initiative (Bewegung), die aus der Basis der Bevölkerung entsteht (Basisdemokratie).
+        </p>
+
+        <div class="row">
+          <div class="col-md-4">
+            <a href="{% url 'about' %}" class="btn btn-primary btn-block">Mehr erfahren</a>
+          </div>
+          <div class="col-md-4">
+            <a href="{% url 'map' %}" class="btn btn-primary btn-block">Grassroot finden</a>
+          </div>
+          <div class="col-md-4">
+            <a href="{% url 'create-group' %}" class="btn btn-primary btn-block">Grassroot gründen</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'grass/base.html' %}
+{% load bootstrap4 %}
+
+{% block style %}
+{{block.super}}
+{{ form.media.css }}
+{{ wizard.form.media }}
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-md-center mt-4">
+  <div class="col-md-8 mt-5">
+    <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+    <div class="progress">
+
+      {% widthratio wizard.steps.step0 wizard.steps.count 100  as progress %}
+
+      <div class="progress-bar" style="width:{{progress}}%;" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <form method="post" class="mt-3">
+      {% csrf_token %}
+      {{ wizard.management_form }}
+      {% if wizard.form.forms %}
+      {{ wizard.form.management_form }}
+      {% for form in wizard.form.forms %}
+      {% bootstrap_form form %}
+      {% endfor %}
+      {% else %}
+      {% bootstrap_form form %}
+      {% endif %}
+      {% buttons %}
+      <button type="submit" class="btn btn-primary">
+        Weiter
+      </button>
+      {% endbuttons %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+{{block.super}}
+{{form.media.js}}
+
+{% endblock %}

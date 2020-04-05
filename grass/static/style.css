@@ -1,0 +1,124 @@
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+
+
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+
+body {
+  margin-top: 4em;
+    min-height: 110vh;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: white;
+}
+
+.page-header {
+  margin-top: 20vh;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.page-header h1 {
+  font-size: calc(100% + 4vw);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.page-header p, .page-header .btn {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+
+input.form-control,.select2-container, .select2-selection {
+  border: 3px #76BB84 solid;
+  background: none;
+  color: white;
+  border-radius: .25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+input.form-control::placeholder {
+  color: white;
+  font-weight: normal;
+}
+
+input.form-control:focus {
+  border: 3px #76BB84 solid;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: transparent !important;
+}
+
+.form-group label {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
