@@ -36,6 +36,8 @@ class Grassroot(models.Model):
 
     location = models.ForeignKey(Location, models.CASCADE)
 
+    verified = models.BooleanField(default=True)
+
 
 class Membership(models.Model):
     user = models.ForeignKey(User, models.CASCADE)

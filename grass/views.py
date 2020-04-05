@@ -115,7 +115,9 @@ def dashboard(request, pk):
 def map_view(request):
 
     return render(request, 'grass/map.html', {
-        'grassroot_list': Grassroot.objects.all(),
+        'grassroot_list': Grassroot.objects.filter(
+            verified=True
+        ),
         'title': "Grassroots"
     })
 
