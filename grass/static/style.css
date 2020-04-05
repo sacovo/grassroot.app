@@ -47,7 +47,7 @@
 
 
 /* Change navbar styling on small viewports */
-@media (max-width: 991.98px) {
+@media (max-width: 768px) {
     .navbar {
         background: #fff;
     }
@@ -121,4 +121,9 @@ input.form-control:focus {
   font-weight: bold;
   text-transform: uppercase;
   margin-top: 1em;
+}
+
+.title {
+  margin-top: 8em;
+  margin-bottom: 3em;
 }
