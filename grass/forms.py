@@ -25,6 +25,8 @@ class SignupForm(forms.Form):
         location = geolocator.geocode(
             cleaned_data['zip_code'] + ' ' + cleaned_data['city']
         )
+        if location is None:
+            raise forms.ValidationError("Invalid location", code="invalid")
         cleaned_data['location'] = location
         cleaned_data['lat'] = location.latitude
         cleaned_data['lng'] = location.longitude
