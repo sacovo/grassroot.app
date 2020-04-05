@@ -38,3 +38,11 @@ class DescriptionStep(forms.Form):
 
 class MissionStep(forms.Form):
     mission = forms.CharField(widget=forms.Textarea)
+
+
+class ContactForm(forms.Form):
+    your_name = forms.CharField()
+    your_email = forms.EmailField()
+    your_message = forms.CharField(widget=forms.Textarea)
+
+

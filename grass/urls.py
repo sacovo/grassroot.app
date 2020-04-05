@@ -13,8 +13,6 @@ urlpatterns = [
     path('impressum/', TemplateView.as_view(
         template_name='grass/impressum.html'
     ), name="impressum"),
-    path('about/', TemplateView.as_view(
-        template_name='grass/about.html'
-    ), name="about"),
+    path('about/', views.about_view, name="about"),
     path('', views.home, name="home"),
 ]

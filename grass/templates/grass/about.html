@@ -1,7 +1,67 @@
 {% extends 'grass/base.html' %}
+{% load bootstrap4 i18n %}
 
 {% block title %} - About {% endblock %}
 
 {% block content %}
+<div class="row">
+  <div class="col-lg-6 mt-4">
+
+    <h1>The Project</h1>
+    <a href="https://tsueri.cloud/s/4geNWCSRiNWi5Go" class="btn btn-secondary mb-2" target="_blank">Download Presentation</a>
+    <p>
+    Even though the news were full of sad stories lately, there were glimpses of hope: Acts of kindness and solidarity started to appear wherever you looked. Young and healthy people were helping members of the risk group with their daily lives. They bought groceries, called elderly people who were feeling lonely, they were looking out for one another. One thing became very clear: In time of crisis, the solidarity can be strong.
+    </p><p>
+    There was one thing more, though: An incredible amount of chaos and disarray. Whenever people wanted to build “neighborly help” groups or any other grassroot movements, they had to start from scratch. Tools like “Hilf-jetzt.ch” tried to help out, but at the end of the day, the amount of time spent on organizing and structure was huge. In our eyes, this is time that the grassroots should be spending achieving their actual goals.
+
+    </p><p>
+    This is where we jump in: Within this challenge we want to build a tool, that allows people to easily create grassroots, find people who want to participate and be found by people who are interested. By making the thresh-hold to start a grassroot as small as possible and streamlining the build up process, we want to stick out and motivate people to engage for the what the think is right. It is our core believe, that when people are dedicated and motivated to achieve common good, the pathway should be paved smoothly.
+
+    <h2>
+      What are the problems you’re trying to solve?
+    </h2>
+
+    <p>
+    Helping people found Grassroot movements: One of the biggest challenges for young grassroot movements is to actually get started. Even though everyone should be able to start such a group, only a handful of people actually have the technical skill set to do it.
+
+    </p><p>
+
+
+    Finding Grassroots and being found: Another hurdle is to find participants who want to collaborate in a common project. This is a two sided issue: How do you find out about a already existing groups? How does an existing group advertise itself?
+
+    </p><p>
+
+
+    Motivate people to participate: Currently, a lot of people are looking out for each other. Sadly, this might change once this crisis is over. To solve this issue, we have to change the mindset, that collaborating for a common goal is “nice to have”: We must strive to normalize this behavior.
+
+    <h2>
+      How do you plan to solve it?
+    </h2>
+
+    <p>
+    There are three key components of our tool: We want to build a workflow, that takes a person who wants to start a grassroot movement by the hand and leads them through the process of getting started. Secondly, we want to build “modules” that make organizing and structuring a movement easier (such as a small member database, a forum, a landing page creator, mailing lists and whatnot). Based on their needs, the administrators shall be able to add or remove these modules. Lastly, we want to build a database of grassroot movements: This way people should easily be able to find out whether or not a certain type of grassroot already exists and if not, they can start their own. This helps the founders of a grassroot to get more exposure and potentially find more participants.
+
+    </p>
+  </div>
+  <div class="col-lg-6 mt-4">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZxhVhkme8rA" allowfullscreen></iframe>
+    </div>
+    <h2 class="my-2">Contact</h2>
+    {% if message %}
+    <div class="alert alert-primary my-3" role="alert">
+      {{message}}
+    </div>
+    {% endif %}
+    <form class="login" method="POST" action="">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button class="primaryAction btn btn-primary" type="submit">Senden</button>
+    </form>
+    <a href="https://github.com/sacovo/grassroot.app"><i class="fa fa-github"></i> Project on Github</a>
+  </div>
+</div>
+
 
 {% endblock %}
+

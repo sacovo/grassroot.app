@@ -45,6 +45,7 @@ body {
                     {{membership.grassroot.name}}
                   </a>
                   {% endfor %}
+                  <a href="{% url 'create-group' %}" class="dropdown-item"><i class="fa fa-plus"></i> Create group</a>
                 </div>
               </li>
               {% else %}

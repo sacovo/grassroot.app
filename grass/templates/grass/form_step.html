@@ -15,6 +15,10 @@
 <div class="row justify-content-md-center">
   <div class="col-md-8">
     <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+    <div class="alert alert-danger">
+      <h6 class="alert-heading">This Project is still under construction.</h6>
+      You can create a group to try our prototype, but you will not be able to access any other features. If you want to be informed about our app,  <a href="{% url 'about' %}"> leave us a message</a>.
+    </div>
     <div class="progress">
 
       {% widthratio wizard.steps.step0 wizard.steps.count 100  as progress %}

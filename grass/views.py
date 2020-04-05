@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.core.mail import send_mail
 
 import phonenumbers
 
@@ -13,7 +14,7 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.utils.text import slugify
 
 from grass.renderer import renderer
-from grass.forms import SignupForm, DescriptionStep, MissionStep
+from grass.forms import SignupForm, DescriptionStep, MissionStep, ContactForm
 
 # Create your views here.
 
@@ -64,7 +65,7 @@ class SignupWizzard(SessionWizardView):
         self.request.session['group_pk'] = grassroot.pk
 
         if self.request.user.is_authenticated:
-            return redirect('link_account')
+            return redirect('link-account')
 
         return redirect('login_or_signup')
 
@@ -122,3 +123,30 @@ def map_view(request):
 @login_required
 def edit_landing_page(request):
     pass
+
+
+def about_view(request):
+    form = ContactForm()
+    message = ''
+
+    if request.POST:
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+            email = data['your_email']
+            name = data['your_name']
+            send_mail(
+                f"Message from {name} - {email}",
+                data['your_message'],
+                'contact@grassroot.app',
+                ['sandro@covo.ch'],
+                fail_silently=True,
+            )
+            message = 'Your message was sent.'
+            form = ContactForm()
+
+    return render(request, 'grass/about.html', {
+        'form': form,
+        'message': message,
+    })
