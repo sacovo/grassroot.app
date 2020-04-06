@@ -38,6 +38,9 @@ class Grassroot(models.Model):
 
     verified = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Membership(models.Model):
     user = models.ForeignKey(User, models.CASCADE)
@@ -53,6 +56,9 @@ class LandingPage(TemplateMixin, MetaMixin):
     grassroot = models.OneToOneField(
         Grassroot, models.CASCADE, related_name="landing_page"
     )
+
+    def __str__(self):
+        return self.grassroot.name
 
     TEMPLATES = [
         Template(

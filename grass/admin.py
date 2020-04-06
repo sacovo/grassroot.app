@@ -10,9 +10,6 @@ from grass import models
 
 @admin.register(models.LandingPage)
 class LandingPageAdmin(ContentEditor):
-    list_display = [
-
-    ]
 
     inlines = [
         plugins.richtext.RichTextInline.create(models.RichText),
