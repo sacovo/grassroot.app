@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_select2',
     'bootstrap4',
+    "content_editor",
+    "ckeditor",
     'grass',
     'allauth',
     'allauth.account',
@@ -156,3 +158,8 @@ ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+try:
+    from grasstools.local_settings import *
+except:
+    pass
